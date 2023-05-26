@@ -1,4 +1,4 @@
-### Projeto De OAC
+### Projeto de OAC
 Arquivo:  ***Architecture.java***.
 
 > Arquitetura 3;
