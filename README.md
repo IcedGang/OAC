@@ -5,6 +5,6 @@ Arquivo:  ***Architecture.java***.
 
 Histórico:
 
-26/05: 
--   Arquitetura implementada
--   AddRegReg
+-   26/05: 
+    -   Arquitetura implementada
+    -   AddRegReg
