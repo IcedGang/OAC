@@ -4,6 +4,7 @@ Arquivo:  ***Architecture.java***.
 > Assembly 2
 
 Histórico:
+
 26/05: 
 -   Arquitetura implementada
 -   AddRegReg
