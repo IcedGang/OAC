@@ -1,0 +1,47 @@
+ADDs:
+
+AddRegReg
+	. RegB <- RegA + RegB
+
+//PC aponta para proxima instrução
+RPG0 -> extbus1
+ir <- extbus1
+pc -> extbus1
+RPG0 <- extbus1
+RPG0 -> intbus1
+ula <- intbus1 // reg 1
+ula incs
+ula -> intbus1 // reg 1
+RPG0 <- intbus1
+RPG0 -> extbus1
+pc <- extbus1
+ir -> extbus1
+RPG0 <- extbus1
+
+//Soma RegA + RegB e armazena em RegB
+pc -> extbus1
+mem lê do extbus1
+demux <- extbus1
+regs -> intbus1
+ula <- intbus1 // reg 0
+
+//PC aponta para proxima instrução
+
+mem lê do extbus1
+demux <- extbus1
+regs -> intbus1
+ula <- intbus1 // reg 1
+ula adds
+ula -> intbus1
+ChangeFlags
+regs <- intbus1
+
+//PC aponta para proxima instrução
+
+
+AddMemReg
+	. RegA <- Memória[Mem] + RegA
+
+AddRegMem
+	. Memória[Mem] <- RegA + Memória[Mem]
+
