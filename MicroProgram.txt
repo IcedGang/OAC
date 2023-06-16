@@ -42,6 +42,49 @@ regs <- intbus1
 AddMemReg
 	. RegA <- Memória[Mem] + RegA
 
+//PC aponta para proxima instrução
+RPG0 -> extbus1
+ir <- extbus1
+pc -> extbus1
+RPG0 <- extbus1
+RPG0 -> intbus1
+ula <- intbus1 // reg 1
+ula incs
+ula -> intbus1 // reg 1
+RPG0 <- intbus1
+RPG0 -> extbus1
+pc <- extbus1
+ir -> extbus1
+RPG0 <- extbus1
+
+//Pega o valor na memoria
+RPG0 -> extbus1
+ir <- extbus1
+pc -> extbus1
+mem lê do extbus1
+mem lê do extbus1
+RPG0 <- extbus1
+RPG0 -> intbus1 
+ula <- intbus1 // reg 0
+ir -> extbus1
+RPG0 <- extbus1
+
+//PC aponta para proxima instrução
+
+//Pega o Reg a ser usado na operação
+pc -> extbus1
+mem lê do extbus1
+demux <- extbus1
+regs -> intbus1
+ula <- intbus1 // reg 1
+ula adds
+ula -> intbus1
+Changeflags
+regs <- intbus1
+
+//PC aponta para proxima instrução
+
+
 AddRegMem
 	. Memória[Mem] <- RegA + Memória[Mem]
 
